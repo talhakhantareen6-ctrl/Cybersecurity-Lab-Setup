@@ -48,27 +48,31 @@ I installed 7-Zip (needed to extract the Kali archive) and VirtualBox on my Wind
 In VirtualBox: File > Tools > Network > NAT Networks > Create.
 Name: `NatNetwork`, IPv4 prefix: `10.0.0.0/24`, DHCP enabled.
 
-
+![NAT Network](screenshots/1-nat-network.png)
 
 ### Step 3. Import Kali Linux
 I downloaded the prebuilt VirtualBox image from kali.org, extracted it with 7-Zip and added it to VirtualBox. Network Adapter 1 is attached to NAT Network `NatNetwork`.
 
+![Kali VM details](screenshots/2-kali-vm-details.png)
 
 ### Step 4. Clipboard, Drag and Drop, Shared Folder
 - Shared Clipboard: Bidirectional
 - Drag'n'Drop: Bidirectional
 - Shared folder: my Windows Downloads folder, Access: Full, Auto Mount: Yes. It appears inside Kali as `sf_Downloads`, and files can be moved in both directions.
 
+![Shared folders](screenshots/3-shared-folder.png)
+![sf_Downloads on Kali desktop](screenshots/4-kali-desktop.png)
 
 ### Step 5. Static IP in Kali
 Network icon > Edit Connections > Wired connection 1 > IPv4 Settings:
 Method Manual, Address `10.0.0.2`, Netmask `24`, Gateway `10.0.0.1`, DNS `8.8.8.8`.
 
+![Kali network settings](screenshots/5-kali-network.png)
 
 ### Step 6. Snapshot
 I took a snapshot named **Fresh Kali 10.0.0.2** on 28/10/2026 as the clean baseline of the lab.
 
-
+![Snapshot](screenshots/6-snapshot.png)
 
 ## Verification
 
@@ -81,6 +85,7 @@ I took a snapshot named **Fresh Kali 10.0.0.2** on 28/10/2026 as the clean basel
 | Shared folder | copy a file between Kali and Windows | Works both ways via `sf_Downloads` |
 | Clipboard | copy text in Windows, paste in Kali | Works |
 
+![nslookup](screenshots/7-nslookup.png)
 
 ## Problems Encountered and Solutions
 
